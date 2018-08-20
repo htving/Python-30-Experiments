@@ -6,7 +6,7 @@
 # 2、编写程序，输入两个集合 setA 和 setB，分别输出它们的交集、并集和差集 setA-setB。
 # 3、编写程序，输入一个自然数，输出它的二进制、八进制、十六进制表示形式。
 
-# 实验1 老办法，循环对10取余数，注意要转成int类型
+# 实验1 自制的老办法，循环对10取余数，注意要转成int类型
 sum = 0
 num = int(input('请输入自然数'))
 while num % 10 > 0:
@@ -14,7 +14,20 @@ while num % 10 > 0:
     num = int(num / 10)
 print(sum)
 
-# 实验1 新姿势，map(fun,[])给[]中每个元素用一次fun函数,也可以给字符串用（maybe字符串也是[]）
+# 实验1 新姿势，map(fun,[])给[]中每个元素用一次fun函数,也可以给字符串用（把字符串当成一个list，每位字符作为一个元素）
 # sum()函数可以给（列表、元组、集合）求和
 num = input('输入自然数')
 print(sum((map(int,num))))
+
+# 实验2 eval函数可以将字符串当成数值返回
+setA = eval(input('请输入一个集合：'))
+setB = eval(input('再输入一个集合：'))
+print('交集：', setA & setB)
+print('并集：', setA | setB)
+print('setA-setB：', setA - setB)
+
+# 实验3 python提供了非常简单的进制转换功能，bin(),oct(),hex()
+num = int(input('请输入一个自然数：'))
+print('二进制：', bin(num))
+print('八进制：', oct(num))
+print('十六进制：', hex(num))
