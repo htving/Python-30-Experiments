@@ -11,6 +11,9 @@
 # 编写程序，模拟蒙特·卡罗计算圆周率近似值的方法，输入掷飞镖次数，然后输出圆周
 # 率近似值。
 
+#关键点0 for循环
+#python中for常与range连用 例如for i in range(10) 相当于c语言中for(i=0;i<10;i++)的写法，可以直接使用其中的变量i
+
 #关键点1 random函数
 #random()返回一个（0,1）范围内的数,使用之前需要import random模块 注：如果需要使用random模块中的random函数，可以直接from random import random
 #例如
