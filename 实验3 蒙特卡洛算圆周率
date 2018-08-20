@@ -1,0 +1,35 @@
+# 实验目的：
+# 1、理解蒙特·卡罗方法原理。
+# 2、理解 for 循环本质与工作原理。
+# 3、了解 random 模块中常用函数。
+# 实验内容：
+# 蒙特·卡罗方法是一种通过概率来得到问题近似解的方法，在很多领域都有重要的应用，
+# 其中就包括圆周率近似值的计算问题。假设有一块边长为 2 的正方形木板，上面画一个单位
+# 圆，然后随意往木板上扔飞镖，落点坐标(x, y)必然在木板上（更多的时候是落在单位圆内），
+# 如果扔的次数足够多，那么落在单位圆内的次数除以总次数再乘以 4，这个数字会无限逼近
+# 圆周率的值。这就是蒙特·卡罗发明的用于计算圆周率近似值的方法，如图所示。
+# 编写程序，模拟蒙特·卡罗计算圆周率近似值的方法，输入掷飞镖次数，然后输出圆周
+# 率近似值。
+
+#关键点1 random函数
+#random()返回一个（0,1）范围内的数,使用之前需要import random模块 注：如果需要使用random模块中的random函数，可以直接from random import random
+#例如
+import random
+print(random.random())
+#可以改成
+from random import random
+print(random())
+
+#关键点2 圆的方程
+# x方 + y方 = r方
+
+#完整代码
+import random
+times = int(1000000)
+count = 0
+for i in range(times):
+    x = random.random()
+    y = random.random()
+    if x*x + y*y <= 1:
+        count += 1
+print(count/times*4)
